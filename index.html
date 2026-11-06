@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fbf8">
+  <meta name="description" content="CloudCHのホームページ。参加型配信や動画、コミュニティの情報をお届けします。">
+  <title>CloudCH</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="CloudCH ホーム">CloudCH<span>.</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="メインメニュー">
+      <a href="profile.html">プロフィール</a>
+      <a href="discord.html">Discord</a>
+      <a href="#social">SNS</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-sparkle sparkle-one" aria-hidden="true">✳</div>
+      <div class="hero-sparkle sparkle-two" aria-hidden="true">✳</div>
+      <div class="marquee-stack" aria-label="CloudCHの動画">
+        <div class="marquee-row">
+          <div class="marquee-track" id="marquee-top"></div>
+        </div>
+        <div class="marquee-row marquee-row-lower">
+          <div class="marquee-track" id="marquee-bottom"></div>
+        </div>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow">WELCOME TO MY CHANNEL</p>
+        <h1 id="hero-title">CloudCH</h1>
+        <p class="hero-copy">CloudFromJPにフレンド申請で参加しよう！</p>
+        <a class="button button-light" data-youtube-link href="#social">YouTubeへGo!!! <span aria-hidden="true">↗</span></a>
+      </div>
+      <a class="scroll-cue" href="#pages"><span></span>SCROLL</a>
+    </section>
+
+    <section class="section pages-section" id="pages" aria-label="CloudCHについて">
+      <div class="section-inner page-link-grid">
+        <a class="page-link-card profile-link-card" href="profile.html">
+          <span class="page-link-index">01 / PROFILE</span>
+          <span class="page-link-title">Cloudの<br>プロフィール</span>
+          <span class="page-link-copy">配信スタイルや参加方法をご紹介。</span>
+          <span class="page-link-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="page-link-card discord-link-card" href="discord.html">
+          <span class="page-link-index">02 / COMMUNITY</span>
+          <span class="page-link-title">Discordで<br>つながろう。</span>
+          <span class="page-link-copy">お知らせやコミュニティはこちら。</span>
+          <span class="page-link-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section social-section" id="social">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="eyebrow">FOLLOW ALONG</p><h2>つながる場所</h2></div>
+          <p class="body-copy">配信のお知らせや動画はこちらから。</p>
+        </div>
+        <div class="social-links">
+          <a class="social-card social-youtube" data-youtube-link href="#social">
+            <svg class="social-icon youtube-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <rect x="4" y="10" width="40" height="28" rx="8"></rect>
+              <path d="M21 18.5v11l10-5.5z"></path>
+            </svg>
+            <span class="social-index">01</span><span class="social-name">YouTube</span><span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="social-card" data-twitch-link href="#social">
+            <svg class="social-icon twitch-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+              <path d="M8 5h36v25L33 41h-9l-7 6v-6H8zm5 5v25h9v5l5-5h7l5-6V10z"></path>
+              <path d="M24 16h4v11h-4zm10 0h4v11h-4z"></path>
+            </svg>
+            <span class="social-index">02</span><span class="social-name">Twitch</span><span class="social-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-inner contact-inner">
+        <p class="eyebrow">SAY HELLO</p>
+        <h2>お問い合わせ</h2>
+        <p class="body-copy" data-contact-copy>Twitchのチャンネルはこちらです。</p>
+        <a class="text-link" data-contact-link href="#contact">Discordでお問い合わせ <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="#home">CloudCH<span>.</span></a>
+    <p>© <span id="current-year"></span> CloudCH</p>
+    <a class="back-top" href="#home">BACK TO TOP ↑</a>
+  </footer>
+</body>
+</html>

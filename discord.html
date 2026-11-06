@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fbf8">
+  <meta name="description" content="CloudCHのDiscordコミュニティ。配信のお知らせや参加型配信の情報はこちら。">
+  <title>Discord | CloudCH</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="content-page">
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="CloudCH ホーム">CloudCH<span>.</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="メインメニュー">
+      <a href="index.html">ホーム</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="discord.html" aria-current="page">Discord</a>
+      <a href="index.html#social">SNS</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section detail-section" aria-labelledby="discord-title">
+      <div class="section-inner discord-detail-card">
+        <div class="discord-decoration" aria-hidden="true">みんなで<br>話そう！</div>
+        <div class="discord-doodle" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="detail-copy">
+          <p class="eyebrow">LET'S PLAY TOGETHER</p>
+          <h1 id="discord-title">配信の外でも、<br>つながろう。</h1>
+          <p class="body-copy" data-discord-description>Discordサーバーで、配信のお知らせや参加型配信の情報をチェックしよう！</p>
+          <div class="community-notes">
+            <h2 class="detail-subheading">サーバーでできること</h2>
+            <ul>
+              <li>配信のお知らせをチェック</li>
+              <li>参加型配信の情報を確認</li>
+              <li>コミュニティで交流</li>
+            </ul>
+            <p class="body-copy">参加したら、サーバー内のお知らせやルールを確認してください。</p>
+          </div>
+          <a class="button button-dark" data-discord-link href="#discord">Discordに参加する <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="index.html">CloudCH<span>.</span></a>
+    <p>© <span id="current-year"></span> CloudCH</p>
+    <a class="back-top" href="index.html">ホームへ戻る ↑</a>
+  </footer>
+</body>
+</html>
