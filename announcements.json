@@ -11,5 +11,13 @@
     "category": "おしらせ",
     "title": "CloudCHホームページをリニューアルしました",
     "content": "CloudCHホームページをリニューアルしました。今後ともよろしくお願いいたします。"
+  },
+
+  {
+    "category": "おしらせ",
+    "title": "本ホームページ公式Dscordを開設について",
+    "content": "Cloudホームページお問い合わせ用Discordサーバーを開設しました。最新情報はDiscordでもご確認いただけます。",
+    "url": "https://discord.gg/4TMyyqNwKC",
+    "linkText": "Discordを見る"
   }
 ]
