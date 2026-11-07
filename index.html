@@ -4,17 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8fbf8">
-  <meta name="description" content="CloudCHのホームページ。参加型配信や動画、コミュニティの情報をお届けします。">
+  <meta name="description" content="CloudCHホームページ。参加型配信や動画、コミュニティの情報をお届けします！">
   <link rel="icon" type="image/jpeg" href="channels4_profile (1).jpg">
-  <title>CloudCH</title>
+  <title>CloudCHホームページ</title>
   <link rel="stylesheet" href="styles.css">
   <script src="site-config.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="intro-screen" aria-hidden="true"><span>CloudCH</span></div>
+  <div class="intro-screen" aria-hidden="true">
+    <span>CloudCH</span>
+    <img class="intro-character" src="sirotumekuma.png" alt="">
+  </div>
   <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="CloudCH ホーム">CloudCH<span>.</span></a>
+    <a class="wordmark" href="#home" aria-label="CloudCH ホーム">CloudCHホームページ<span>.</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
       <span></span><span></span>
     </button>
@@ -56,18 +59,8 @@
             <h2 id="announcements-title">お知らせ</h2>
           </div>
         </div>
-        <ul class="announcement-list">
-          <li>
-            <article class="announcement-card">
-              <span class="announcement-category">配信・参加型</span>
-              <div>
-                <h3>配信のお知らせ</h3>
-                <p>配信予定や参加方法など、最新情報はDiscordでご確認いただけます。</p>
-              </div>
-              <a class="text-link announcement-link" data-discord-link href="discord.html">Discordを見る <span aria-hidden="true">↗</span></a>
-            </article>
-          </li>
-        </ul>
+        <ul class="announcement-list" id="announcement-list" aria-busy="true"></ul>
+        <p class="announcement-status" id="announcement-status" role="status" aria-live="polite">お知らせを読み込み中...</p>
       </div>
     </section>
 

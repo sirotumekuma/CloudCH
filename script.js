@@ -36,6 +36,101 @@
   setLink("[data-contact-link]", config.contactUrl || config.twitchUrl);
   document.querySelector("#current-year").textContent = new Date().getFullYear();
 
+  const announcementList = document.querySelector("#announcement-list");
+  const announcementStatus = document.querySelector("#announcement-status");
+  if (announcementList && announcementStatus) {
+    const isValidDate = (date) => {
+      if (typeof date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(date)) return false;
+      return !Number.isNaN(Date.parse(`${date}T00:00:00Z`)) &&
+        new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) === date;
+    };
+
+    const isValidAnnouncement = (announcement) => {
+      if (!announcement || typeof announcement !== "object") return false;
+      if (["category", "title", "content"].some((key) =>
+        typeof announcement[key] !== "string" || !announcement[key].trim()
+      )) return false;
+      if (announcement.date !== undefined && !isValidDate(announcement.date)) return false;
+      if (announcement.url !== undefined) {
+        if (typeof announcement.url !== "string") return false;
+        try {
+          const url = new URL(announcement.url, window.location.href);
+          if (url.protocol !== "http:" && url.protocol !== "https:") return false;
+        } catch {
+          return false;
+        }
+      }
+      return announcement.linkText === undefined || typeof announcement.linkText === "string";
+    };
+
+    const renderAnnouncements = (announcements) => {
+      announcementList.replaceChildren();
+      announcements.forEach((announcement) => {
+        const item = document.createElement("li");
+        const card = document.createElement("article");
+        card.className = "announcement-card";
+
+        const category = document.createElement("span");
+        category.className = "announcement-category";
+        category.textContent = announcement.category;
+        card.append(category);
+
+        const body = document.createElement("div");
+        if (announcement.date) {
+          const date = document.createElement("time");
+          date.className = "announcement-date";
+          date.dateTime = announcement.date;
+          date.textContent = new Date(`${announcement.date}T00:00:00`).toLocaleDateString("ja-JP");
+          body.append(date);
+        }
+        const title = document.createElement("h3");
+        title.textContent = announcement.title;
+        body.append(title);
+        const content = document.createElement("p");
+        content.textContent = announcement.content;
+        body.append(content);
+        card.append(body);
+
+        if (announcement.url) {
+          const link = document.createElement("a");
+          link.className = "text-link announcement-link";
+          link.href = announcement.url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.append(document.createTextNode(`${announcement.linkText || "詳しく見る"} `));
+          const arrow = document.createElement("span");
+          arrow.setAttribute("aria-hidden", "true");
+          arrow.textContent = "↗";
+          link.append(arrow);
+          card.append(link);
+        }
+        item.append(card);
+        announcementList.append(item);
+      });
+      announcementList.setAttribute("aria-busy", "false");
+      announcementStatus.textContent = announcements.length ? "" : "現在、お知らせはありません。";
+    };
+
+    fetch("announcements.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`お知らせ一覧の取得に失敗しました: HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((announcements) => {
+        if (!Array.isArray(announcements)) throw new TypeError("お知らせ一覧の形式が正しくありません");
+        const validAnnouncements = announcements.filter(isValidAnnouncement);
+        if (validAnnouncements.length !== announcements.length) {
+          console.error("一部のお知らせを形式不正のため除外しました。");
+        }
+        renderAnnouncements(validAnnouncements);
+      })
+      .catch((error) => {
+        announcementList.setAttribute("aria-busy", "false");
+        announcementStatus.textContent = "お知らせを読み込めませんでした。時間をおいて再度ご確認ください。";
+        console.error("お知らせ一覧を読み込めません。", error);
+      });
+  }
+
   const youtubeApiKey = config.youtubeApiKey;
   const fetchYouTube = async (resource, parameters) => {
     const query = new URLSearchParams({ ...parameters, key: youtubeApiKey });

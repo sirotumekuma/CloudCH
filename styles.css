@@ -90,6 +90,7 @@ button { font: inherit; }
 .sparkle-two { right: 12%; bottom: 25%; font-size: 1.3rem; }
 .intro-screen { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; background: var(--paper); animation: intro-screen-fade .55s ease 1.05s forwards; }
 .intro-screen span { color: var(--green-dark); font-size: clamp(3.5rem, 14vw, 7rem); font-weight: 850; letter-spacing: -.09em; animation: intro-wordmark-in .55s ease-out both; }
+.intro-character { position: absolute; top: -4vw; right: -5vw; width: clamp(200px, 52vw, 680px); height: auto; animation: intro-wordmark-in .55s ease-out both; }
 
 .section { padding: clamp(75px, 11vw, 145px) 24px; }
 .section-inner { position: relative; width: min(100%, 1040px); margin: 0 auto; }
@@ -129,9 +130,12 @@ button { font: inherit; }
 .announcement-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .announcement-card { display: grid; grid-template-columns: minmax(130px, .35fr) 1fr auto; align-items: center; gap: 24px; padding: clamp(20px, 4vw, 32px); border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
 .announcement-category { justify-self: start; padding: 8px 12px; border-radius: 99px; background: var(--mint); color: var(--green-dark); font-size: .68rem; font-weight: 800; }
+.announcement-date { display: block; margin-bottom: 6px; color: var(--muted); font-size: .72rem; }
 .announcement-card h3 { margin: 0; font-size: 1rem; }
 .announcement-card p { margin: 8px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.8; }
 .announcement-link { margin: 0; white-space: nowrap; }
+.announcement-status { margin: 0; color: var(--muted); font-size: .82rem; text-align: center; }
+.announcement-status:empty { display: none; }
 .social-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .social-card { position: relative; display: flex; min-height: 132px; align-items: end; justify-content: space-between; padding: 20px 52px 20px 20px; border: 1px solid var(--line); border-radius: 15px; background: white; text-decoration: none; transition: transform .2s, border-color .2s, background .2s; }
 .social-card:hover:not(.is-disabled) { transform: translateY(-4px); border-color: #b6d2bd; }
