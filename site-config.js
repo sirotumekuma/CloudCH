@@ -6,7 +6,7 @@ window.CLOUDCH_CONFIG = {
   discordUrl: "https://discord.gg/pmut43dre2",
   discordDescription: "Discordサーバーで、配信のお知らせや参加型配信の情報をチェックしよう！",
   twitchUrl: "https://www.twitch.tv/cloudfromjp",
-  contactUrl: "https://discord.gg/pmut43dre2",
+  contactUrl: "https://discord.gg/4TMyyqNwKC",
   contactText: "ご質問やお問い合わせは、CloudCHのDiscordサーバーからどうぞ！",
   profileBio: ""
 };

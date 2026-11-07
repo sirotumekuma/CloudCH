@@ -90,7 +90,7 @@ button { font: inherit; }
 .sparkle-two { right: 12%; bottom: 25%; font-size: 1.3rem; }
 .intro-screen { position: fixed; z-index: 20; inset: 0; display: grid; place-items: center; background: var(--paper); animation: intro-screen-fade .55s ease 1.05s forwards; }
 .intro-screen span { color: var(--green-dark); font-size: clamp(3.5rem, 14vw, 7rem); font-weight: 850; letter-spacing: -.09em; animation: intro-wordmark-in .55s ease-out both; }
-.intro-character { position: absolute; top: -4vw; right: -5vw; width: clamp(200px, 52vw, 680px); height: auto; animation: intro-wordmark-in .55s ease-out both; }
+.intro-character { position: fixed; top: -4vw; right: -5vw; width: clamp(200px, 52vw, 680px); height: auto; animation: intro-wordmark-in .55s ease-out both; }
 
 .section { padding: clamp(75px, 11vw, 145px) 24px; }
 .section-inner { position: relative; width: min(100%, 1040px); margin: 0 auto; }
