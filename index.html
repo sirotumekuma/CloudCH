@@ -12,6 +12,7 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="intro-screen" aria-hidden="true"><span>CloudCH</span></div>
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="CloudCH ホーム">CloudCH<span>.</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
@@ -20,7 +21,7 @@
     <nav class="site-nav" id="site-nav" aria-label="メインメニュー">
       <a href="profile.html">プロフィール</a>
       <a href="discord.html">Discord</a>
-      <a href="#social">SNS</a>
+      <a href="social.html">SNS</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
   </header>
@@ -42,54 +43,52 @@
         <p class="eyebrow hero-eyebrow">WELCOME TO MY CHANNEL</p>
         <h1 id="hero-title">CloudCH</h1>
         <p class="hero-copy">CloudFromJPにフレンド申請で参加しよう！</p>
-        <a class="button button-light" data-youtube-link href="#social">YouTubeへGo!!! <span aria-hidden="true">↗</span></a>
-        <a class="live-status" id="youtube-live-link" data-youtube-live-link href="#home" aria-live="polite">
-          <span class="live-status-dot" aria-hidden="true"></span>
-          <span id="youtube-live-status">ライブ状況を確認中...</span>
-        </a>
+        <a class="button button-light" data-youtube-link href="social.html">YouTubeへGo!!! <span aria-hidden="true">↗</span></a>
       </div>
-      <a class="scroll-cue" href="#pages"><span></span>SCROLL</a>
+      <a class="scroll-cue" href="#announcements"><span></span>SCROLL</a>
+    </section>
+
+    <section class="section announcements-section" id="announcements" aria-labelledby="announcements-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">INFORMATION</p>
+            <h2 id="announcements-title">お知らせ</h2>
+          </div>
+        </div>
+        <ul class="announcement-list">
+          <li>
+            <article class="announcement-card">
+              <span class="announcement-category">配信・参加型</span>
+              <div>
+                <h3>配信のお知らせ</h3>
+                <p>配信予定や参加方法など、最新情報はDiscordでご確認いただけます。</p>
+              </div>
+              <a class="text-link announcement-link" data-discord-link href="discord.html">Discordを見る <span aria-hidden="true">↗</span></a>
+            </article>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="section pages-section" id="pages" aria-label="CloudCHについて">
       <div class="section-inner page-link-grid">
         <a class="page-link-card profile-link-card" href="profile.html">
-          <span class="page-link-index">01 / PROFILE</span>
-          <span class="page-link-title">Cloudの<br>プロフィール</span>
-          <span class="page-link-copy">配信スタイルや参加方法をご紹介。</span>
+          <span class="page-link-content">
+            <span class="page-link-index">01 / PROFILE</span>
+            <span class="page-link-title">Cloudのプロフィール</span>
+            <span class="page-link-copy">配信スタイルや参加方法をご紹介。</span>
+          </span>
           <span class="page-link-arrow" aria-hidden="true">↗</span>
         </a>
         <a class="page-link-card discord-link-card" href="discord.html">
-          <span class="page-link-index">02 / COMMUNITY</span>
-          <span class="page-link-title">Discordで<br>つながろう。</span>
-          <span class="page-link-copy">お知らせやコミュニティはこちら。</span>
+          <span class="page-link-content">
+            <span class="page-link-index">02 / COMMUNITY</span>
+            <span class="page-link-title">Discordでつながろう。</span>
+            <span class="page-link-copy">お知らせやコミュニティはこちら。</span>
+          </span>
           <span class="page-link-arrow" aria-hidden="true">↗</span>
         </a>
-      </div>
-    </section>
-
-    <section class="section social-section" id="social">
-      <div class="section-inner">
-        <div class="section-heading">
-          <div><p class="eyebrow">FOLLOW ALONG</p><h2>つながる場所</h2></div>
-          <p class="body-copy">配信のお知らせや動画はこちらから。</p>
-        </div>
-        <div class="social-links">
-          <a class="social-card social-youtube" data-youtube-link href="#social">
-            <svg class="social-icon youtube-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-              <rect x="4" y="10" width="40" height="28" rx="8"></rect>
-              <path d="M21 18.5v11l10-5.5z"></path>
-            </svg>
-            <span class="social-index">01</span><span class="social-name">YouTube</span><span class="social-arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="social-card" data-twitch-link href="#social">
-            <svg class="social-icon twitch-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
-              <path d="M8 5h36v25L33 41h-9l-7 6v-6H8zm5 5v25h9v5l5-5h7l5-6V10z"></path>
-              <path d="M24 16h4v11h-4zm10 0h4v11h-4z"></path>
-            </svg>
-            <span class="social-index">02</span><span class="social-name">Twitch</span><span class="social-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
       </div>
     </section>
 
@@ -99,6 +98,7 @@
         <h2>お問い合わせ</h2>
         <p class="body-copy" data-contact-copy>Twitchのチャンネルはこちらです。</p>
         <a class="text-link" data-contact-link href="#contact">Discordでお問い合わせ <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="mailto:sirotumekuma@gmail.com">sirotumekuma@gmail.com <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>

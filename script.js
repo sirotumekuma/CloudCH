@@ -44,44 +44,6 @@
     return response.json();
   };
 
-  const liveStatus = document.querySelector("#youtube-live-status");
-  if (liveStatus) {
-    const liveLink = document.querySelector("#youtube-live-link");
-    if (!youtubeApiKey) {
-      liveStatus.textContent = "ライブ状況は現在確認できません";
-      liveLink.href = config.channelUrl;
-    } else {
-      const updateLiveStatus = () => {
-        fetchYouTube("search", {
-          part: "snippet",
-          channelId: config.channelId,
-          eventType: "live",
-          type: "video",
-          maxResults: "1"
-        })
-          .then((data) => {
-            const liveVideo = data.items?.[0];
-            if (liveVideo) {
-              liveStatus.textContent = "LIVE配信中！視聴する";
-              liveLink.href = `https://www.youtube.com/watch?v=${encodeURIComponent(liveVideo.id.videoId)}`;
-              liveLink.classList.add("is-live");
-            } else {
-              liveStatus.textContent = "現在ライブ配信はありません";
-              liveLink.href = config.channelUrl;
-            }
-          })
-          .catch((error) => {
-            liveStatus.textContent = "ライブ状況を取得できません";
-            liveLink.href = config.channelUrl;
-            console.error("YouTubeのライブ状況を取得できません。", error);
-          });
-      };
-
-      updateLiveStatus();
-      window.setInterval(updateLiveStatus, 30 * 60 * 1000);
-    }
-  }
-
   const subscriberCount = document.querySelector("#youtube-subscriber-count");
   if (subscriberCount) {
     if (!youtubeApiKey) {

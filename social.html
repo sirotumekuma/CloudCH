@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fbf8">
+  <meta name="description" content="CloudCHのYouTubeでは動画やアーカイブ、Twitchではライブ配信を楽しめます。">
+  <link rel="icon" type="image/jpeg" href="channels4_profile (1).jpg">
+  <title>SNS | CloudCH</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="content-page">
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="CloudCH ホーム">CloudCH<span>.</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="メインメニュー">
+      <a href="index.html">ホーム</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="discord.html">Discord</a>
+      <a href="social.html" aria-current="page">SNS</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section detail-section social-page-section" aria-labelledby="social-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div><p class="eyebrow">FOLLOW ALONG</p><h1 id="social-title">つながる場所</h1></div>
+          <p class="body-copy">動画や配信アーカイブはYouTube、ライブ配信はTwitchでお楽しみください。</p>
+        </div>
+        <div class="social-copy-list">
+          <section class="social-copy-item" aria-labelledby="youtube-heading">
+            <div class="social-copy-heading">
+              <svg class="social-copy-icon youtube-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <rect x="4" y="10" width="40" height="28" rx="8"></rect>
+                <path d="M21 18.5v11l10-5.5z"></path>
+              </svg>
+              <h2 id="youtube-heading">YouTube</h2>
+            </div>
+            <p>参加型配信以外にも投稿動画をたまーーに上げます！ぜひチャンネル登録お願いします。登録者数：466人（11/7時点）</p>
+            <a class="text-link" data-youtube-link href="social.html">YouTubeチャンネルを見る <span aria-hidden="true">↗</span></a>
+          </section>
+          <section class="social-copy-item" aria-labelledby="twitch-heading">
+            <div class="social-copy-heading">
+              <svg class="social-copy-icon twitch-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path d="M8 5h36v25L33 41h-9l-7 6v-6H8zm5 5v25h9v5l5-5h7l5-6V10z"></path>
+                <path d="M24 16h4v11h-4zm10 0h4v11h-4z"></path>
+              </svg>
+              <h2 id="twitch-heading">Twitch</h2>
+            </div>
+            <p>ここではマイクラ以外のグラセフなどの配信をします！ぜひこちらも見に来てください！</p>
+            <a class="text-link" data-twitch-link href="https://www.twitch.tv/cloudfromjp">Twitchを見に行く <span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="index.html">CloudCH<span>.</span></a>
+    <p>© <span id="current-year"></span> CloudCH</p>
+    <a class="back-top" href="index.html">ホームへ戻る ↑</a>
+  </footer>
+</body>
+</html>
