@@ -31,6 +31,7 @@
   setText("[data-discord-description]", config.discordDescription);
   setText("[data-contact-copy]", config.contactText);
   setLink("[data-youtube-link]", config.youtubeUrl || config.channelUrl);
+  setLink("[data-youtube-subscribe-link]", config.youtubeSubscribeUrl || config.youtubeUrl || config.channelUrl);
   setLink("[data-discord-link]", config.discordUrl);
   setLink("[data-twitch-link]", config.twitchUrl);
   setLink("[data-contact-link]", config.contactUrl || config.twitchUrl);

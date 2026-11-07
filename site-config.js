@@ -3,6 +3,7 @@ window.CLOUDCH_CONFIG = {
   youtubeApiKey: "AIzaSyA29kqRh-g55pAbJ2VSUyOfejArjgSDNWg",
   channelUrl: "https://www.youtube.com/@クラウド-b7l",
   youtubeUrl: "https://www.youtube.com/@クラウド-b7l",
+  youtubeSubscribeUrl: "https://www.youtube.com/@クラウド-b7l?sub_confirmation=1",
   discordUrl: "https://discord.gg/pmut43dre2",
   discordDescription: "Discordサーバーで、配信のお知らせや参加型配信の情報をチェックしよう！",
   twitchUrl: "https://www.twitch.tv/cloudfromjp",
