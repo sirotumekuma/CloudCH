@@ -83,6 +83,10 @@ button { font: inherit; }
 .button:hover { transform: translateY(-2px); }
 .button-light { background: white; color: var(--green-dark); box-shadow: 0 6px 22px rgba(49, 93, 64, .1); }
 .button-light:hover { background: #f3fbf4; }
+.live-status { display: flex; width: fit-content; min-height: 40px; align-items: center; justify-content: center; gap: 9px; margin: 15px auto 0; color: var(--green-dark); font-size: .75rem; font-weight: 700; text-decoration: none; }
+.live-status-dot { width: 9px; height: 9px; border-radius: 50%; background: #9aa79d; }
+.live-status.is-live .live-status-dot { background: #e33d3d; box-shadow: 0 0 0 4px rgba(227,61,61,.13); }
+.live-status.is-live { color: #b52828; }
 .scroll-cue { position: absolute; bottom: 23px; left: 50%; display: flex; align-items: center; flex-direction: column; gap: 7px; color: #55705d; font-size: .55rem; font-weight: 700; letter-spacing: .16em; text-decoration: none; transform: translateX(-50%); }
 .scroll-cue span { width: 1px; height: 26px; background: #779480; }
 .hero-sparkle { position: absolute; color: rgba(64, 126, 83, .4); }
@@ -101,6 +105,8 @@ button { font: inherit; }
 .body-copy { max-width: 550px; margin: 17px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.95; }
 .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .profile-tags span { padding: 8px 12px; border-radius: 99px; background: #edf4ee; color: #52705c; font-size: .68rem; font-weight: 700; }
+.subscriber-count { display: flex; flex-wrap: wrap; align-items: baseline; gap: 9px; margin: 22px 0 0; color: var(--muted); font-size: .78rem; }
+.subscriber-count strong { color: var(--green-dark); font-size: 1.05rem; }
 .button-dark { margin-top: 24px; background: var(--green-dark); color: white; }
 .button-dark:hover { background: var(--green); }
 .discord-decoration { position: absolute; right: 11%; top: 50%; display: grid; width: clamp(160px, 25vw, 260px); aspect-ratio: 1; place-content: center; border: 1px solid rgba(47,114,85,.15); border-radius: 50%; color: rgba(47,114,85,.15); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.12; text-align: center; transform: translateY(-50%) rotate(9deg); }

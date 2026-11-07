@@ -36,6 +36,74 @@
   setLink("[data-contact-link]", config.contactUrl || config.twitchUrl);
   document.querySelector("#current-year").textContent = new Date().getFullYear();
 
+  const youtubeApiKey = config.youtubeApiKey;
+  const fetchYouTube = async (resource, parameters) => {
+    const query = new URLSearchParams({ ...parameters, key: youtubeApiKey });
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/${resource}?${query}`);
+    if (!response.ok) throw new Error(`YouTube API request failed: HTTP ${response.status}`);
+    return response.json();
+  };
+
+  const liveStatus = document.querySelector("#youtube-live-status");
+  if (liveStatus) {
+    const liveLink = document.querySelector("#youtube-live-link");
+    if (!youtubeApiKey) {
+      liveStatus.textContent = "ライブ状況は現在確認できません";
+      liveLink.href = config.channelUrl;
+    } else {
+      const updateLiveStatus = () => {
+        fetchYouTube("search", {
+          part: "snippet",
+          channelId: config.channelId,
+          eventType: "live",
+          type: "video",
+          maxResults: "1"
+        })
+          .then((data) => {
+            const liveVideo = data.items?.[0];
+            if (liveVideo) {
+              liveStatus.textContent = "LIVE配信中！視聴する";
+              liveLink.href = `https://www.youtube.com/watch?v=${encodeURIComponent(liveVideo.id.videoId)}`;
+              liveLink.classList.add("is-live");
+            } else {
+              liveStatus.textContent = "現在ライブ配信はありません";
+              liveLink.href = config.channelUrl;
+            }
+          })
+          .catch((error) => {
+            liveStatus.textContent = "ライブ状況を取得できません";
+            liveLink.href = config.channelUrl;
+            console.error("YouTubeのライブ状況を取得できません。", error);
+          });
+      };
+
+      updateLiveStatus();
+      window.setInterval(updateLiveStatus, 30 * 60 * 1000);
+    }
+  }
+
+  const subscriberCount = document.querySelector("#youtube-subscriber-count");
+  if (subscriberCount) {
+    if (!youtubeApiKey) {
+      subscriberCount.textContent = "APIキー未設定";
+    } else {
+      fetchYouTube("channels", {
+        part: "statistics",
+        id: config.channelId
+      })
+        .then((data) => {
+          const count = data.items?.[0]?.statistics?.subscriberCount;
+          subscriberCount.textContent = count
+            ? `${Number(count).toLocaleString("ja-JP")}人`
+            : "非公開";
+        })
+        .catch((error) => {
+          subscriberCount.textContent = "取得できません";
+          console.error("YouTubeの登録者数を取得できません。", error);
+        });
+    }
+  }
+
   const closeMenu = () => {
     nav.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");

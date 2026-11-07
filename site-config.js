@@ -1,5 +1,6 @@
 window.CLOUDCH_CONFIG = {
   channelId: "UCOgwfFareyhTX4QrH8HLJYQ",
+  youtubeApiKey: "AIzaSyA29kqRh-g55pAbJ2VSUyOfejArjgSDNWg",
   channelUrl: "https://www.youtube.com/@クラウド-b7l",
   youtubeUrl: "https://www.youtube.com/@クラウド-b7l",
   discordUrl: "https://discord.gg/pmut43dre2",
