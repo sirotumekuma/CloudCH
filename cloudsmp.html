@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fbf8">
+  <meta name="description" content="CloudSMP専用アドオンの機能、サーバー参加情報、プレイヤー向け操作やサーバールールをご紹介します。">
+  <link rel="icon" type="image/jpeg" href="channels4_profile (1).jpg">
+  <title>CloudSMP | CloudCH</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="content-page">
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="CloudCH ホーム">CloudCH<span>.</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="メインメニュー">
+      <a href="index.html">ホーム</a>
+      <a href="profile.html">プロフィール</a>
+      <a href="cloudsmp.html" aria-current="page">CloudSMP</a>
+      <a href="discord.html">Discord</a>
+      <a href="social.html">SNS</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section cloudsmp-page" aria-labelledby="cloudsmp-title">
+      <div class="section-inner">
+        <div class="cloudsmp-banner">
+          <img src="title.png" alt="CloudSMP ロゴ">
+        </div>
+        <div class="cloudsmp-intro">
+          <p class="eyebrow">CLOUD SMP ADDON</p>
+          <h1 id="cloudsmp-title">CloudSMP専用アドオン</h1>
+          <p class="body-copy">Minecraft Bedrock Dedicated Server向けのBehavior Packです。保護やホーム、CloudPay経済、プレイヤー市場、クエストなど、みんなで遊ぶための機能を追加します。</p>
+          <div class="cloudsmp-server-info" aria-label="サーバー接続情報">
+            <div><span>サーバーアドレス</span><strong>moti-hosting.com</strong></div>
+            <div><span>ポート</span><strong>30318</strong></div>
+          </div>
+          <div class="cloudsmp-actions">
+            <a class="button button-dark" href="https://discord.gg/8VEb7Ee9W8" target="_blank" rel="noopener noreferrer">CloudSMP専用Discordに参加 <span aria-hidden="true">↗</span></a>
+            <a class="button button-dark" data-discord-link href="discord.html">参加情報をDiscordで確認 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <section class="cloudsmp-section" aria-labelledby="cloudsmp-features">
+          <h2 id="cloudsmp-features">アドオンの主な機能</h2>
+          <p class="cloudsmp-section-lead">プレイヤー向けの生活・交流機能から、サーバー運営を支える管理機能まで搭載しています。</p>
+          <div class="cloudsmp-feature-grid">
+            <article class="cloudsmp-feature-card">
+              <h3>保護・ホーム</h3>
+              <p>チャンク保護、保護メンバーと権限の管理、個人ホーム、保護チェストを利用できます。チャンクは水平16×16ブロック単位です。</p>
+            </article>
+            <article class="cloudsmp-feature-card">
+              <h3>CloudPay・取引</h3>
+              <p>ショップ、プレイヤー市場、オークション、購入注文、プレイヤーショップ、銀行預金、送金、取引履歴を追加します。</p>
+            </article>
+            <article class="cloudsmp-feature-card">
+              <h3>冒険・成長</h3>
+              <p>職業、クエスト、ログインボーナス、プレイ時間ランク、ランキング、ランダムテレポート、公共ワープを楽しめます。</p>
+            </article>
+            <article class="cloudsmp-feature-card">
+              <h3>プレイヤー交流</h3>
+              <p>TP申請、フレンド、PvP切替、タイトル、懸賞金、オフライン相手にも送れるプレイヤーメールに対応します。</p>
+            </article>
+            <article class="cloudsmp-feature-card">
+              <h3>便利な道具</h3>
+              <p>原木・木材を自動売却するセルアックスと、保護領域を避けて前方を採掘する3段階ドリルを使えます。</p>
+            </article>
+            <article class="cloudsmp-feature-card">
+              <h3>運営メニュー</h3>
+              <p>運営権限を持つプレイヤー向けに、プレイヤー管理、告知、ミュート・BAN・警告、期間限定報酬イベントなどを用意しています。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="cloudsmp-section" aria-labelledby="cloudsmp-play-title">
+          <h2 id="cloudsmp-play-title">プレイヤー向け操作</h2>
+          <p class="cloudsmp-section-lead">メニューコンパスから各機能を開きます。ゲーム内の独自スラッシュコマンドではなく、Bedrock対応のUIで操作します。</p>
+          <ul class="cloudsmp-list">
+            <li><strong>メニュー:</strong> 参加時に配布される「CloudSMP メニュー」コンパスを使用します。紛失した場合は権限のあるプレイヤーが <code>/scriptevent cloudsmp:menu</code> を実行して再配布できます。</li>
+            <li><strong>保護:</strong> 保護したいチャンク内でメニューを開き、「チャンク保護・管理」を選択します。初期8か所、最大100か所まで保護でき、保護メンバーには建築・コンテナ権限を設定できます。</li>
+            <li><strong>そのほか:</strong> ショップ、市場、TP申請、銀行、クエスト、PvP、メールなどは「CloudPay・市場・追加機能」から利用できます。死亡地点への帰還や公開ワープもここから操作します。</li>
+          </ul>
+        </section>
+
+        <section class="cloudsmp-section" aria-labelledby="cloudsmp-rules-title">
+          <h2 id="cloudsmp-rules-title">CloudSMPルールと注意事項</h2>
+          <p class="cloudsmp-section-lead">みんなが安心して遊べるよう、以下のルールとアドオンの制限を確認してください。</p>
+          <ul class="cloudsmp-list">
+            <li>バグ・チート・X-rayを含むテクスチャは禁止です。遠方のプレイヤーや透明化・スペクテイター状態のプレイヤーの位置を割り出す機能（Hitboxを含む）を持つClientも禁止です。</li>
+            <li>サーバーに負荷をかける大規模なトラップなどは禁止です。違反を見つけた場合は運営へ報告してください。違反者にはKick・BAN・mute等の措置を行う場合があります。</li>
+            <li>保護機能はプレイヤー操作と爆発によるブロック破壊を制限しますが、ホッパー、ピストン、火、液体など、すべてのゲーム内機構を防止するものではありません。</li>
+            <li>PvPは初期状態でOFFです。両プレイヤーがONにした場合のみプレイヤー間ダメージが許可されます。ルール表示は周知用であり、チートや禁止行為の自動検知・処罰は行いません。</li>
+            <li>市場・オークション・注文・ショップで扱えるのは通常のバニラアイテムです。特殊データを持つアイテムは出品・納品できません。</li>
+          </ul>
+          <div class="cloudsmp-notes">
+            <p>ショップ商品、職業報酬、ランク、初期所持金、銀行金利、クエスト報酬、市場・オークション税などは <code>CloudSMP_BP/scripts/economy-config.js</code> で変更できます。</p>
+            <p>保護の対象や他のプラグイン・サーバー設定との組み合わせを含め、公開前に実機で動作を確認してください。バーチャルスポナー機能は現在実装されていません。</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="index.html">CloudCH<span>.</span></a>
+    <p>© <span id="current-year"></span> CloudCH</p>
+    <a class="back-top" href="index.html">ホームへ戻る ↑</a>
+  </footer>
+</body>
+</html>
