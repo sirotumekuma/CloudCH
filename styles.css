@@ -71,7 +71,7 @@ button { font: inherit; }
 .marquee-card::after { position: absolute; inset: auto 0 0; content: ""; height: 48%; background: linear-gradient(transparent, rgba(28, 44, 34, .68)); }
 .marquee-card-title { position: absolute; z-index: 1; inset: auto 12px 10px; overflow: hidden; color: white; font-size: clamp(.65rem, 1.25vw, .88rem); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; text-shadow: 0 1px 5px #26352b; }
 .marquee-card.is-placeholder { display: grid; place-items: center; background: linear-gradient(145deg, #c8e5ce, #83b991); }
-.marquee-card.is-placeholder::before { content: "CloudCH"; color: rgba(255,255,255,.83); font-size: clamp(1.2rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.06em; }
+.marquee-card.is-placeholder::before { content: "クラウドン"; color: rgba(255,255,255,.83); font-size: clamp(1.2rem, 3vw, 2rem); font-weight: 800; letter-spacing: -.06em; }
 .marquee-card.is-placeholder::after { content: "動画を準備中"; inset: auto 12px 10px; height: auto; background: none; text-align: center; font-size: .65rem; color: rgba(255,255,255,.9); }
 .hero-shade { position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse at center, rgba(247,251,247,.82) 0%, rgba(247,251,247,.59) 34%, rgba(247,251,247,.06) 76%); }
 .hero-content { width: min(100% - 40px, 720px); margin: 28px auto 0; text-align: center; animation: rise-in .8s both; }
